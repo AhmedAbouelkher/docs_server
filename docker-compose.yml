@@ -5,6 +5,9 @@ services:
     build: .
     container_name: streaming
     restart: always
+    volumes:
+      - ~/.certs/dev.omega-stream.site/fullchain.pem:/usr/src/app/cert.pem
+      - ~/.certs/dev.omega-stream.site/privkey.pem:/usr/src/app/privkey.pem
     ports:
       - 443:8088
     environment:
